@@ -1,6 +1,6 @@
 import styles from "./CTA.module.css";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Users, TrendingUp, Award } from "lucide-react";
 
 export default function CTA() {
   return (
@@ -10,24 +10,48 @@ export default function CTA() {
           
           {/* Left Side: Content */}
           <div className={styles.contentSide}>
-            <span className={styles.label}>READY TO GROW?</span>
+
+            {/* Editorial label */}
+            <div className={styles.labelRow}>
+              <div className={styles.labelLine}></div>
+              <span className={styles.label}>READY TO GROW?</span>
+            </div>
+
             <h2 className={styles.heading}>
-              Elevate Your Workforce with Our <span className={styles.goldText}>Top-Tier Talent</span>
+              Elevate Your Workforce with Our{" "}
+              <span className={styles.goldText}>Top-Tier Talent</span>
             </h2>
+
             <p className={styles.description}>
-              Stop worrying about skill gaps, extended vacancies, or operational slowdowns. We connect you with the industry's best professionals, so you can focus entirely on scaling your core business.
+              Stop worrying about skill gaps, extended vacancies, or operational slowdowns. We connect you with the industry&apos;s best professionals.
             </p>
+
+            {/* Trust metrics row */}
+            <div className={styles.metricsRow}>
+              <div className={styles.metric}>
+                <Users size={18} className={styles.metricIcon} />
+                <span>Permanent Placement</span>
+              </div>
+              <div className={styles.metric}>
+                <TrendingUp size={18} className={styles.metricIcon} />
+                <span>Contract Staffing</span>
+              </div>
+              <div className={styles.metric}>
+                <Award size={18} className={styles.metricIcon} />
+                <span>Payroll Admin</span>
+              </div>
+            </div>
+
             <a href="#contact" className={styles.actionBtn}>
-              Schedule a Free Consultation <ArrowRight size={18} className={styles.btnIcon} />
+              Schedule a Consultation <ArrowRight size={18} className={styles.btnIcon} />
             </a>
+
           </div>
           
-          {/* Right Side: Animated Visual */}
+          {/* Right Side: Image */}
           <div className={styles.visualSide}>
             <div className={styles.imageWrapper}>
-              {/* Overlay that fades out on hover */}
               <div className={styles.colorTint}></div>
-              
               <Image 
                 src="/asset/singaporean style/people-working-with-documents-laptop.jpg"
                 alt="Talent Acquisition Partners"
@@ -35,8 +59,6 @@ export default function CTA() {
                 height={500}
                 className={styles.premiumImgae}
               />
-              
-              {/* Decorative Border effect */}
               <div className={styles.borderEffect}></div>
             </div>
           </div>

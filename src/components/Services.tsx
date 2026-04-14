@@ -33,13 +33,18 @@ export default function Services() {
     <section id="services" className={styles.servicesSection}>
       <div className="container">
         
-        {/* Header */}
-        <div className={`${styles.header} animate-fade-in-up`}>
-          <span className="label-small text-gold">WHAT WE OFFER</span>
-          <h2>Workforce Solutions <br/> Tailored For You</h2>
-          <p className="body-text">
-            Our deep industry expertise and strong local market knowledge enable us to support and transform your business in response to evolving future demands. We deliver proven, industry-leading workforce solutions tailored to meet your specific organisational needs.
-          </p>
+        {/* Header — Editorial 2-column layout */}
+        <div className={`${styles.sectionHeader} animate-fade-in-up`}>
+          <div className={styles.headerLeft}>
+            <span className={styles.sectionLabel}>WHAT WE OFFER</span>
+            <h2 className={styles.sectionTitle}>Workforce Solutions <br/> Tailored For You</h2>
+          </div>
+          <div className={styles.headerRight}>
+            <p className={styles.sectionDesc}>
+              Our deep industry expertise and strong local market knowledge enable us to support and transform your business in response to evolving future demands. We deliver proven, industry-leading workforce solutions tailored to meet your specific organisational needs.
+            </p>
+            <div className={styles.dividerLine}></div>
+          </div>
         </div>
         
         {/* Cards Grid : Unique Image-Based Cards */}

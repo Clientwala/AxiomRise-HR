@@ -1,12 +1,56 @@
 .contactSection {
   background-color: var(--background);
   padding: 100px 0;
+  position: relative;
+  overflow: hidden;
 }
 
-.header {
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto 60px;
+/* Subtle background grid texture */
+.contactSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(10, 31, 68, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 31, 68, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Editorial 2-Column Header ─── */
+.sectionHeader {
+  display: flex;
+  gap: 60px;
+  align-items: flex-end;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .sectionHeader {
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+  }
+}
+
+.headerLeft {
+  flex: 0 0 auto;
+}
+
+.labelRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.labelLine {
+  width: 24px;
+  height: 2px;
+  background-color: var(--secondary);
 }
 
 .labelSmall {
@@ -15,39 +59,23 @@
   font-weight: 700;
   color: var(--secondary);
   text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 16px;
-  display: inline-block;
-  position: relative;
-  cursor: default;
+  letter-spacing: 3px;
 }
 
-.labelSmall::after {
+.sectionTitle {
+  font-size: 42px;
+  line-height: 1.15;
+  color: var(--primary);
+  font-weight: 700;
+  letter-spacing: -1px;
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle::after {
   content: '';
   position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--secondary);
-  transition: width 0.3s ease;
-}
-
-.labelSmall:hover::after {
-  width: 100%;
-}
-
-.header h2 {
-  margin-bottom: 16px;
-  display: inline-block;
-  position: relative;
-  cursor: default;
-}
-
-.header h2::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
+  bottom: -6px;
   left: 0;
   width: 0;
   height: 3px;
@@ -55,15 +83,45 @@
   transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.header h2:hover::after {
+.sectionTitle:hover::after {
   width: 100%;
+}
+
+.headerRight {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 16px;
+  padding-bottom: 8px;
+}
+
+.sectionDesc {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  max-width: 500px;
+}
+
+.dividerLine {
+  height: 1px;
+  background: linear-gradient(to right, var(--secondary), transparent);
+  width: 100%;
+  animation: expandLine 1.5s ease forwards;
+}
+
+@keyframes expandLine {
+  from { width: 0; opacity: 0; }
+  to { width: 100%; opacity: 1; }
 }
 
 .layout {
   display: grid;
-  grid-template-columns: 45%; 
+  grid-template-columns: 45%;
   justify-content: space-between;
   gap: 40px;
+  position: relative;
+  z-index: 1;
 }
 
 @media (min-width: 1024px) {

@@ -57,13 +57,21 @@ export default function Contact() {
     <section id="contact" className={styles.contactSection}>
       <div className={`container ${styles.contactContainer}`}>
         
-        {/* Header */}
-        <div className={`${styles.header} animate-fade-in-up`}>
-          <span className={styles.labelSmall}>GET IN TOUCH</span>
-          <h2>Let&apos;s Build Something <br/> Great Together</h2>
-          <p className="body-text">
-            Our experts are available to provide insights and solutions tailored to your business needs.
-          </p>
+        {/* Header — Editorial Layout */}
+        <div className={`${styles.sectionHeader} animate-fade-in-up`}>
+          <div className={styles.headerLeft}>
+            <div className={styles.labelRow}>
+              <div className={styles.labelLine}></div>
+              <span className={styles.labelSmall}>GET IN TOUCH</span>
+            </div>
+            <h2 className={styles.sectionTitle}>Let&apos;s Build Something <br/> Great Together</h2>
+          </div>
+          <div className={styles.headerRight}>
+            <p className={styles.sectionDesc}>
+              Our experts are available to provide insights and solutions tailored to your business needs.
+            </p>
+            <div className={styles.dividerLine}></div>
+          </div>
         </div>
         
         <div className={styles.layout}>

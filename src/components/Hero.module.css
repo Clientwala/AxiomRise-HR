@@ -160,7 +160,7 @@
 
 @media (min-width: 1024px) {
   .mosaicGrid {
-    gap: 30px;
+    gap: 0; /* Removing gap to rely on transforms for overlapping */
   }
 }
 
@@ -171,7 +171,6 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-  /* Asymmetric stagger */
   margin-top: 60px; 
 }
 
@@ -191,6 +190,21 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+@media (min-width: 1024px) {
+  .mosaicTall {
+    transform: translateX(40px);
+    z-index: 3;
+  }
+  .mosaicWide {
+    transform: translateY(30px);
+    z-index: 1;
+  }
+  .mosaicSquare {
+    transform: translate(-30px, -20px);
+    z-index: 4;
+  }
 }
 
 .editorialImage {
@@ -234,14 +248,34 @@
     align-items: flex-start;
   }
   .mosaicGrid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    min-height: auto;
+    display: block;
+    position: relative;
+    height: 420px;
+    margin-top: 20px;
   }
   .mosaicTall, .mosaicWide, .mosaicSquare {
-    grid-column: 1 / 2;
-    grid-row: auto;
-    min-height: 250px;
+    position: absolute;
     margin-top: 0;
+  }
+  .mosaicTall {
+    width: 60%;
+    height: 85%;
+    left: 0;
+    top: 5%;
+    z-index: 2;
+  }
+  .mosaicWide {
+    width: 65%;
+    height: 50%;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+  .mosaicSquare {
+    width: 55%;
+    height: 45%;
+    right: 5%;
+    bottom: 5%;
+    z-index: 3;
   }
 }

@@ -19,10 +19,45 @@
   letter-spacing: 2px;
   margin-bottom: 16px;
   display: inline-block;
+  position: relative;
+  cursor: default;
+}
+
+.labelSmall::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary);
+  transition: width 0.3s ease;
+}
+
+.labelSmall:hover::after {
+  width: 100%;
 }
 
 .heading {
   margin-bottom: 24px;
+  display: inline-block;
+  position: relative;
+  cursor: default;
+}
+
+.heading::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--secondary);
+  transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.heading:hover::after {
+  width: 100%;
 }
 
 .introText {

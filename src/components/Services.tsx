@@ -64,7 +64,6 @@ export default function Services() {
               <div className={styles.cardContent}>
                 <h3>{service.title}</h3>
                 <p className={styles.cardDesc}>{service.description}</p>
-                <div className={styles.exploreLink}>Explore Details &rarr;</div>
               </div>
             </div>
           ))}

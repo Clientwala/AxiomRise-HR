@@ -1,0 +1,204 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 0;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.scrolled {
+  background-color: rgba(10, 31, 68, 0.95); /* Deep Navy Glass */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 15px 0;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Sleek glass edge */
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logoImageWrapper {
+  width: 72px; /* Increased size slightly for better visibility */
+  height: 72px;
+  border-radius: 50%; /* Trims the native square corners of the image */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoImage {
+  width: 110%; /* Forces the image to be larger inside the circle, hiding white space */
+  height: 110%;
+  object-fit: cover;
+  transform: scale(1.1); /* Zooms in on the inner logo */
+}
+
+.logoTextWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.brandName {
+  font-family: var(--font-inter);
+  font-weight: 700;
+  font-size: 24px;
+  color: #ffffff;
+  line-height: 1.1;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* extra pop */
+}
+.brandTagline {
+  font-family: var(--font-inter);
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.navLinks {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .navLinks {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+}
+
+.navLink {
+  font-family: var(--font-inter);
+  font-weight: 500;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  transition: color 0.3s ease;
+  padding-bottom: 4px;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary);
+  transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.activeLink {
+  color: var(--accent) !important;
+}
+
+.activeLink::after {
+  width: 100%;
+}
+
+.navLink:hover {
+  color: var(--accent);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.ctaButton {
+  background-color: var(--secondary);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 10px 24px;
+  border-radius: var(--radius-btn);
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-btn-gold);
+}
+
+.ctaButton:hover {
+  background-color: #B8851F;
+  transform: translateY(-2px);
+  color: #fff; /* keep white */
+}
+
+.mobileMenuBtn {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1010;
+}
+
+@media (min-width: 992px) {
+  .mobileMenuBtn {
+    display: none !important;
+  }
+}
+
+.mobileMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--surface);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.mobileMenuOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mobileNavLink {
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--text-primary);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-divider);
+}
+
+.mobileCtaButton {
+  display: inline-block;
+  background-color: var(--secondary);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: var(--radius-btn);
+  text-align: center;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .logoImageWrapper {
+    width: 48px;
+    height: 48px;
+  }
+}
+

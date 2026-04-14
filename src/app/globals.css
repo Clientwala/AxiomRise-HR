@@ -1,0 +1,131 @@
+/* AxiomRise Design System */
+
+:root {
+  /* Color Palette */
+  --primary: #0A1F44;          /* Deep Navy Blue */
+  --secondary: #C9962C;        /* Rich Gold / Amber */
+  --accent: #E8B84B;           /* Light Gold */
+  --background: #F8F9FC;       /* Off White */
+  --surface: #FFFFFF;          /* Pure White */
+  --text-primary: #1A1A2E;     /* Dark Charcoal */
+  --text-secondary: #6B7280;   /* Cool Grey */
+  --border-divider: #E5E7EB;   /* Light Grey */
+
+  /* Shadows & Depth */
+  --shadow-card: 0 4px 24px rgba(10, 31, 68, 0.08);
+  --shadow-card-hover: 0 12px 40px rgba(10, 31, 68, 0.16);
+  --shadow-btn-gold: 0 4px 20px rgba(201, 150, 44, 0.35);
+
+  /* Miscellaneous */
+  --radius-card: 12px;
+  --radius-btn: 8px;
+  --radius-pill: 50px;
+  --spacing-section: 100px;
+  --spacing-section-mobile: 60px;
+  --grid-gutter: 32px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body {
+  font-family: var(--font-inter), sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary);
+  line-height: 1.2;
+}
+
+h1 { /* Hero Headings */
+  font-size: 64px;
+  font-weight: 800;
+}
+
+h2 { /* Section Headings */
+  font-size: 44px;
+  font-weight: 700;
+}
+
+h3 { /* Subheadings */
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.body-text {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.label-small {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--grid-gutter);
+}
+
+section {
+  padding: var(--spacing-section) 0;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  h1 { font-size: 36px; }
+  h2 { font-size: 32px; }
+  h3 { font-size: 20px; }
+  section { padding: var(--spacing-section-mobile) 0; }
+  .container { padding: 0 20px; }
+}

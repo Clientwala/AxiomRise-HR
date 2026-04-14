@@ -1,0 +1,132 @@
+.servicesSection {
+  background-color: var(--background);
+  padding: 120px 0 80px 0;
+}
+
+.header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+}
+
+.header span {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: var(--secondary);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.header h2 {
+  margin-bottom: 20px;
+  font-size: 38px;
+  color: var(--primary);
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .cardsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+}
+
+.imageCard {
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.imageCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(10, 31, 68, 0.12);
+}
+
+.cardVisual {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+}
+
+.cardImage {
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.imageCard:hover .cardImage {
+  transform: scale(1.05);
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to top, rgba(10, 31, 68, 0.4) 0%, rgba(10, 31, 68, 0) 50%);
+  z-index: 1;
+}
+
+.tagPill {
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  z-index: 2;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: var(--secondary);
+  padding: 6px 14px;
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+}
+
+.cardContent {
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cardContent h3 {
+  font-size: 20px;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.cardDesc {
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.6;
+  flex-grow: 1;
+  margin-bottom: 24px;
+}
+
+.cardDesc strong {
+  color: var(--secondary);
+  font-weight: 700;
+}
+
+.exploreLink {
+  color: var(--secondary);
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+  align-self: flex-start;
+}
+
+.imageCard:hover .exploreLink {
+  color: var(--primary);
+}

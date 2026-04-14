@@ -1,9 +1,57 @@
 .heroSection {
   background-color: #050a15;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 60px 60px;
   min-height: 100vh;
   display: flex;
   align-items: center;
   padding: 120px 0 60px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Industry Level Noise Texture */
+.heroSection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+  opacity: 0.15;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Professional Industry Level Light Sweeps */
+.lightSweep1, .lightSweep2 {
+  content: '';
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  border-radius: 50%;
+  filter: blur(140px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.lightSweep1 {
+  background: radial-gradient(circle, rgba(30, 60, 110, 0.5) 0%, transparent 60%);
+  top: -300px;
+  right: -200px;
+  animation: slowDrift 18s ease-in-out infinite alternate;
+}
+
+.lightSweep2 {
+  background: radial-gradient(circle, rgba(201, 150, 44, 0.12) 0%, transparent 60%);
+  bottom: -300px;
+  left: -200px;
+  animation: slowDrift 25s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes slowDrift {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-100px, 100px); }
 }
 
 .gridContainer {
@@ -11,6 +59,8 @@
   grid-template-columns: 1fr;
   gap: 30px;
   height: auto;
+  position: relative;
+  z-index: 1;
 }
 
 @media (min-width: 1024px) {
@@ -113,11 +163,6 @@
   background-color: var(--secondary);
   color: #ffffff;
   transform: translateY(-2px);
-}
-
-.btnIcon {
-  margin-left: 8px;
-  transition: transform 0.3s ease;
 }
 
 .primaryActionButton:hover .btnIcon {

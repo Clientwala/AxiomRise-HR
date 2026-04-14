@@ -10,12 +10,12 @@
 }
 
 .scrolled {
-  background-color: rgba(10, 31, 68, 0.95); /* Deep Navy Glass */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: 15px 0;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Sleek glass edge */
+  background-color: rgba(5, 10, 21, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 12px 0;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(201, 150, 44, 0.15);
 }
 
 .navContainer {
@@ -59,7 +59,14 @@
   color: #ffffff;
   line-height: 1.1;
   text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* extra pop */
+  transition: color 0.3s ease;
 }
+
+.scrolled .brandName {
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
 .brandTagline {
   font-family: var(--font-inter);
   font-size: 9px;
@@ -91,6 +98,14 @@
   padding-bottom: 4px;
 }
 
+.scrolled .navLink {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.scrolled .navLink:hover {
+  color: var(--secondary);
+}
+
 .navLink::after {
   content: "";
   position: absolute;
@@ -119,20 +134,46 @@
 }
 
 .ctaButton {
-  background-color: var(--secondary);
+  background-color: transparent;
   color: #ffffff;
-  font-weight: 700;
-  font-size: 15px;
-  padding: 10px 24px;
-  border-radius: var(--radius-btn);
-  transition: all 0.3s ease;
-  box-shadow: var(--shadow-btn-gold);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 8px 24px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.scrolled .ctaButton {
+  border-color: rgba(201, 150, 44, 0.5);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: var(--secondary);
+  z-index: -1;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .ctaButton:hover {
-  background-color: #B8851F;
+  border-color: var(--secondary);
+  color: #ffffff !important;
   transform: translateY(-2px);
-  color: #fff; /* keep white */
+  box-shadow: 0 10px 20px rgba(201, 150, 44, 0.2);
+}
+
+.ctaButton:hover::before {
+  transform: translateY(0);
 }
 
 .mobileMenuBtn {
@@ -145,6 +186,11 @@
   cursor: pointer;
   padding: 8px;
   z-index: 1010;
+  transition: color 0.3s ease;
+}
+
+.scrolled .mobileMenuBtn {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 @media (min-width: 992px) {

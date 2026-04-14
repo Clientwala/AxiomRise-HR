@@ -1,21 +1,13 @@
 .contactSection {
-  background-color: var(--background);
+  background-color: #F8F9FC;
+  background-image: 
+    radial-gradient(circle at center, rgba(201, 150, 44, 0.03) 0%, transparent 60%),
+    linear-gradient(rgba(10, 31, 68, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 31, 68, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 60px 60px, 60px 60px;
   padding: 100px 0;
   position: relative;
   overflow: hidden;
-}
-
-/* Subtle background grid texture */
-.contactSection::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: 
-    linear-gradient(rgba(10, 31, 68, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(10, 31, 68, 0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
-  pointer-events: none;
-  z-index: 0;
 }
 
 /* ─── Editorial 2-Column Header ─── */

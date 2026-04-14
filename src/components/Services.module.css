@@ -1,21 +1,13 @@
 .servicesSection {
-  background-color: var(--background);
+  background-color: #FFFFFF;
+  background-image: 
+    radial-gradient(circle at top center, rgba(10, 31, 68, 0.02) 0%, transparent 60%),
+    linear-gradient(rgba(10, 31, 68, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 31, 68, 0.015) 1px, transparent 1px);
+  background-size: 100% 100%, 60px 60px, 60px 60px;
   padding: 120px 0 80px 0;
   position: relative;
   overflow: hidden;
-}
-
-/* Subtle background grid texture */
-.servicesSection::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: 
-    linear-gradient(rgba(10, 31, 68, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(10, 31, 68, 0.04) 1px, transparent 1px);
-  background-size: 50px 50px;
-  pointer-events: none;
-  z-index: 0;
 }
 
 /* ─── Editorial 2-Column Header ─── */

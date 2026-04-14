@@ -44,7 +44,7 @@ export default function CTA() {
             </div>
 
             <a href="#contact" className={styles.actionBtn}>
-              Schedule a Consultation <ArrowRight size={18} className={styles.btnIcon} />
+              Schedule a Consultation
             </a>
 
           </div>

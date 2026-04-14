@@ -1,21 +1,14 @@
 .aboutSection {
-  background-color: #f8f9fc;
+  background-color: #F8F9FC;
+  background-image: 
+    radial-gradient(circle at top left, rgba(10, 31, 68, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at bottom right, rgba(201, 150, 44, 0.03) 0%, transparent 50%),
+    linear-gradient(rgba(10, 31, 68, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 31, 68, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 60px 60px, 60px 60px;
   padding: 120px 0 100px 0;
   position: relative;
   overflow: hidden;
-}
-
-/* Subtle background grid texture same as Services/Contact */
-.aboutSection::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: 
-    linear-gradient(rgba(10, 31, 68, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(10, 31, 68, 0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
-  pointer-events: none;
-  z-index: 0;
 }
 
 /* Decoration Circle */
@@ -238,6 +231,12 @@
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
   z-index: 2;
   border: 4px solid #fff;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s ease;
+}
+
+.imageLayerMain:hover {
+  transform: perspective(800px) rotateY(-4deg) scale(1.02);
+  box-shadow: 0 35px 70px rgba(10, 31, 68, 0.3), 0 0 0 2px rgba(201, 150, 44, 0.4);
 }
 
 .imageLayerUnder {
@@ -250,7 +249,13 @@
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   z-index: 1;
-  opacity: 0.8;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease;
+  opacity: 0.75;
+}
+
+.imageLayerUnder:hover {
+  transform: perspective(800px) rotateX(3deg) scale(1.04);
+  opacity: 1;
 }
 
 .imageLayerContext {
@@ -264,24 +269,32 @@
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
   z-index: 3;
   border: 4px solid #fff;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s ease;
+}
+
+.imageLayerContext:hover {
+  transform: perspective(800px) rotateY(5deg) translateY(-6px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25), 0 0 0 2px rgba(201, 150, 44, 0.5);
 }
 
 .aboutImage {
   object-fit: cover;
-  transition: transform 0.8s ease;
+  filter: grayscale(15%) contrast(1.05);
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), filter 0.8s ease;
 }
 
 .imageLayerMain:hover .aboutImage, 
 .imageLayerUnder:hover .aboutImage, 
 .imageLayerContext:hover .aboutImage {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  filter: grayscale(0%) contrast(1.15);
 }
 
 .contextOverlay {
   position: absolute;
   bottom: 12px;
   left: 12px;
-  background: rgba(10, 31, 68, 0.8);
+  background: rgba(10, 31, 68, 0.85);
   backdrop-filter: blur(8px);
   color: var(--secondary);
   font-size: 11px;
@@ -312,5 +325,13 @@
   }
   .imageLayerContext {
     width: 50%;
+  }
+  .iconCircle {
+    width: 54px;
+    height: 54px;
+  }
+  .iconGold {
+    width: 32px;
+    height: 32px;
   }
 }

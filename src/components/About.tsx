@@ -88,12 +88,11 @@ export default function About() {
               {/* Image 3: Landmark/Context (CBD/Skyline) */}
               <div className={styles.imageLayerContext}>
                 <Image 
-                  src="/asset/service images/business-meeting-office.jpg" 
-                  alt="Professional Environment" 
+                  src="/asset/service images/payroll-still-life-with-cash-high-angle.jpg" 
+                  alt="Payroll & HR Services" 
                   fill
                   className={styles.aboutImage}
                 />
-                <div className={styles.contextOverlay}>Singapore HQ</div>
               </div>
 
             </div>

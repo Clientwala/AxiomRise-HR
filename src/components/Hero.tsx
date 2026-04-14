@@ -4,6 +4,8 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section id="home" className={styles.heroSection}>
+      <div className={styles.lightSweep1} />
+      <div className={styles.lightSweep2} />
       <div className={`container ${styles.gridContainer}`}>
         
         {/* Left Panel: Primary Content */}

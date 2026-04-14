@@ -166,18 +166,7 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  <div className={styles.inputGroup}>
-                    <label htmlFor="serviceInterested">Service Interested In</label>
-                    <div className={styles.selectWrapper}>
-                      <select id="serviceInterested" name="serviceInterested" value={formData.serviceInterested} onChange={handleChange}>
-                        <option value="">Select a service...</option>
-                        <option value="Permanent Placement">Permanent Placement</option>
-                        <option value="Contract Staffing">Contract Staffing</option>
-                        <option value="Payroll Administration">Payroll Administration</option>
-                        <option value="Other">Other</option>
-                      </select>
-                    </div>
-                  </div>
+
 
                   <div className={styles.inputGroup}>
                     <label htmlFor="message">Message *</label>

@@ -1,6 +1,7 @@
 import styles from "./CTA.module.css";
 import Image from "next/image";
-import { ArrowRight, Users, TrendingUp, Award } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { SketchedPermanent, SketchedContract, SketchedPayroll } from "./HanddrawnIcons";
 
 export default function CTA() {
   return (
@@ -29,15 +30,15 @@ export default function CTA() {
             {/* Trust metrics row */}
             <div className={styles.metricsRow}>
               <div className={styles.metric}>
-                <Users size={18} className={styles.metricIcon} />
+                <SketchedPermanent className={styles.metricIcon} />
                 <span>Permanent Placement</span>
               </div>
               <div className={styles.metric}>
-                <TrendingUp size={18} className={styles.metricIcon} />
+                <SketchedContract className={styles.metricIcon} />
                 <span>Contract Staffing</span>
               </div>
               <div className={styles.metric}>
-                <Award size={18} className={styles.metricIcon} />
+                <SketchedPayroll className={styles.metricIcon} />
                 <span>Payroll Admin</span>
               </div>
             </div>

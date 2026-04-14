@@ -1,13 +1,69 @@
 .aboutSection {
-  background-color: var(--surface);
+  background-color: #f8f9fc;
+  padding: 120px 0 100px 0;
+  position: relative;
   overflow: hidden;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 55% 45%;
+/* Subtle background grid texture same as Services/Contact */
+.aboutSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(10, 31, 68, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 31, 68, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Decoration Circle */
+.aboutSection::after {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 150, 44, 0.1);
+  top: -100px;
+  right: -100px;
+  pointer-events: none;
+}
+
+/* ─── Editorial 2-Column Header ─── */
+.sectionHeader {
+  display: flex;
   gap: 60px;
+  align-items: flex-end;
+  margin-bottom: 70px;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .sectionHeader {
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+  }
+}
+
+.headerLeft {
+  flex: 0 0 auto;
+}
+
+.labelRow {
+  display: flex;
   align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.labelLine {
+  width: 24px;
+  height: 2px;
+  background-color: var(--secondary);
 }
 
 .labelSmall {
@@ -16,39 +72,24 @@
   font-weight: 700;
   color: var(--secondary);
   text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 16px;
-  display: inline-block;
-  position: relative;
-  cursor: default;
+  letter-spacing: 3px;
 }
 
-.labelSmall::after {
+.sectionTitle {
+  font-family: var(--font-playfair), serif;
+  font-size: 42px;
+  line-height: 1.15;
+  color: var(--primary);
+  font-weight: 500;
+  letter-spacing: -1px;
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle::after {
   content: '';
   position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--secondary);
-  transition: width 0.3s ease;
-}
-
-.labelSmall:hover::after {
-  width: 100%;
-}
-
-.heading {
-  margin-bottom: 24px;
-  display: inline-block;
-  position: relative;
-  cursor: default;
-}
-
-.heading::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
+  bottom: -6px;
   left: 0;
   width: 0;
   height: 3px;
@@ -56,187 +97,220 @@
   transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.heading:hover::after {
+.sectionTitle:hover::after {
   width: 100%;
 }
 
-.introText {
+.headerRight {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 16px;
+  padding-bottom: 8px;
+}
+
+.sectionDesc {
   font-size: 16px;
+  line-height: 1.75;
   color: var(--text-secondary);
-  line-height: 1.7;
-  margin-bottom: 40px;
+  max-width: 500px;
+}
+
+.dividerLine {
+  height: 1px;
+  background: linear-gradient(to right, var(--secondary), transparent);
+  width: 100%;
+}
+
+/* ─── Grid Content ─── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 5fr 5fr;
+  }
 }
 
 .cardsWrapper {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
 .aboutCard {
-  padding: 24px;
-  border-radius: var(--radius-card);
+  background-color: #ffffff;
+  padding: 32px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  transition: all 0.4s ease;
   position: relative;
-  overflow: hidden;
-  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
 }
 
-.cardActive {
-  z-index: 10;
-  box-shadow: 0 30px 60px rgba(10, 31, 68, 0.15);
+.aboutCard:hover {
+  transform: translateX(10px);
+  box-shadow: 0 20px 40px rgba(10, 31, 68, 0.1);
+  border-color: rgba(201, 150, 44, 0.2);
+}
+
+/* Gold bar highlight same as services */
+.aboutCard::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 40px;
+  background-color: var(--secondary);
+  transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.aboutCard:hover::before {
+  width: 4px;
 }
 
 .cardHeader {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
+  gap: 16px;
+  margin-bottom: 16px;
 }
 
-/* Vision Card Styles */
-.visionCard {
-  background-color: #F0F4FA;
-  border-left: 4px solid var(--secondary);
-}
-
-.cardLabelVision {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--secondary);
-  letter-spacing: 2px;
-}
-
-.visionIcon {
-  color: var(--secondary);
-}
-
-.cardTextVision {
-  font-size: 17px;
-  font-weight: 600;
-  color: var(--primary);
-  line-height: 1.5;
-}
-
-/* Mission Card Styles */
-.missionCard {
-  background-color: var(--surface);
-  border: 1px solid var(--border-divider);
-  border-left: 4px solid var(--primary);
-}
-
-.cardLabelMission {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--primary);
-  letter-spacing: 2px;
-}
-
-.missionIcon {
-  color: var(--primary);
-}
-
-.cardTextMission {
-  font-size: 17px;
-  font-weight: 600;
-  color: var(--text-primary);
-  line-height: 1.5;
-}
-
-.rightColumn {
+.iconCircle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #fcefd6;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.visualWrapper {
+.iconGold {
+  width: 24px;
+  height: 24px;
+  color: #c9962c;
+}
+
+.cardLabel {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 1.5px;
+}
+
+.cardText {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* ─── Right Column Imagery Triple-Layer ─── */
+.rightColumn {
+  position: relative;
+  height: 550px;
+}
+
+.visualMosaic {
+  position: relative;
   width: 100%;
-  max-width: 400px;
-  margin-bottom: 30px;
-  position: relative;
+  height: 100%;
+}
+
+.imageLayerMain {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 75%;
+  height: 75%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+  border: 4px solid #fff;
+}
+
+.imageLayerUnder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 55%;
+  height: 55%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   z-index: 1;
-  animation: floatParallax 8s ease-in-out infinite alternate;
+  opacity: 0.8;
 }
 
-/* Aurora Borealis Effects */
-.auroraWrapper {
+.imageLayerContext {
   position: absolute;
-  top: -20%; left: -20%; right: -20%; bottom: -20%;
-  z-index: -1;
-  pointer-events: none;
-  filter: blur(40px);
-}
-
-.orb {
-  position: absolute;
-  border-radius: 50%;
-  mix-blend-mode: hard-light;
-}
-
-.orb1 {
-  width: 280px; height: 280px;
-  background: radial-gradient(circle, rgba(201,150,44,0.7), transparent 70%);
-  top: 0; left: 0;
-  animation: auroraFlow 12s infinite alternate cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.orb2 {
-  width: 350px; height: 350px;
-  background: radial-gradient(circle, rgba(10,31,68,0.9), transparent 70%);
-  bottom: 0; right: 0;
-  animation: auroraFlow 16s infinite alternate-reverse cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.orb3 {
-  width: 250px; height: 250px;
-  background: radial-gradient(circle, rgba(78,205,196,0.5), transparent 70%);
-  top: 40%; left: 30%;
-  transform: translate(-50%, -50%);
-  animation: auroraFlowPulse 9s infinite alternate cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-@keyframes auroraFlow {
-  0% { transform: translate(0, 0) scale(1) rotate(0deg); }
-  50% { transform: translate(40px, 60px) scale(1.1) rotate(45deg); }
-  100% { transform: translate(-30px, 30px) scale(0.9) rotate(90deg); }
-}
-
-@keyframes auroraFlowPulse {
-  0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.4; }
-  100% { transform: translate(-20%, -70%) scale(1.4); opacity: 0.9; }
-}
-
-@keyframes floatParallax {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-20px); }
-}
-
-.photoContainer {
-  position: relative;
+  bottom: 5%;
+  right: 0;
+  width: 45%;
+  height: 40%;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 20px 20px 0px rgba(201, 150, 44, 0.4); /* Restored overlapping card stack look */
-  background-color: var(--primary); 
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+  border: 4px solid #fff;
 }
 
 .aboutImage {
-  width: 100%;
-  height: auto;
-  display: block;
   object-fit: cover;
+  transition: transform 0.8s ease;
 }
 
-.visualDivider {
-  width: 40px;
-  height: 2px;
-  background-color: var(--secondary);
-  margin: 0 auto;
+.imageLayerMain:hover .aboutImage, 
+.imageLayerUnder:hover .aboutImage, 
+.imageLayerContext:hover .aboutImage {
+  transform: scale(1.05);
 }
 
-@media (max-width: 992px) {
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+.contextOverlay {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(10, 31, 68, 0.8);
+  backdrop-filter: blur(8px);
+  color: var(--secondary);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 1024px) {
+  .rightColumn {
+    height: 450px;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .rightColumn {
+    height: 350px;
+  }
+  .sectionTitle {
+    font-size: 32px;
+  }
+  .imageLayerMain {
+    width: 80%;
+    left: 10%;
+  }
+  .imageLayerContext {
+    width: 50%;
   }
 }

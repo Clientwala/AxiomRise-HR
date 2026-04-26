@@ -47,6 +47,7 @@ export default function Footer() {
           <div className={styles.col}>
             <h4 className={styles.colTitle}>Contact</h4>
             <ul className={styles.linkList}>
+              <li><a href="tel:+6588061585">+65 8806 1585</a></li>
               <li><a href="mailto:Info@axiomrise.sg">Info@axiomrise.sg</a></li>
               <li className={styles.address}>336 Smith Street, #05-301<br/>New Bridge Centre<br/>Singapore 050336</li>
             </ul>

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import styles from "./Contact.module.css";
-import { Mail, MapPin, Clock, CheckCircle2, AlertCircle } from "lucide-react";
+import { Mail, MapPin, Clock, Phone, CheckCircle2, AlertCircle } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -87,6 +87,16 @@ export default function Contact() {
                 <div>
                   <div className={styles.infoLabel}>Email Us</div>
                   <a href="mailto:Info@axiomrise.sg" className={styles.infoValueGold}>Info@axiomrise.sg</a>
+                </div>
+              </div>
+
+              <div className={styles.infoCard}>
+                <div className={styles.iconCircle}>
+                  <Phone className={styles.icon} />
+                </div>
+                <div>
+                  <div className={styles.infoLabel}>Call Us</div>
+                  <a href="tel:+6588061585" className={styles.infoValueGold}>+65 8806 1585</a>
                 </div>
               </div>
 

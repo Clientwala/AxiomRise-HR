@@ -15,7 +15,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "IT Recruitment & Talent Solutions Singapore | Axiom Rise",
   description: "Axiom Rise is your trusted leader in talent and HR solutions in Singapore. We specialize in Permanent Placement, Contract Staffing, and Payroll Administration.",
-  keywords: ["IT Recruitment Singapore", "Talent Solutions Singapore", "HR Solutions", "Axiom Rise", "AxiomRise", "Permanent Placement", "Contract Staffing", "Payroll Administration"],
+  keywords: ["Top Recruitment Agency Singapore", "IT Talent Solutions Asia Pacific", "HR Consulting Firm SG", "IT Recruitment Singapore", "Talent Solutions Singapore", "HR Solutions", "Axiom Rise", "AxiomRise", "Permanent Placement", "Contract Staffing", "Payroll Administration", "Tech Hiring Singapore"],
   authors: [{ name: "Axiom Rise Pte. Ltd." }],
   creator: "Axiom Rise",
   publisher: "Axiom Rise Pte. Ltd.",
@@ -71,13 +71,25 @@ export default function RootLayout({
     "logo": "https://axiomrise.sg/icon.png",
     "image": "https://axiomrise.sg/icon.png",
     "description": "IT Recruitment and Talent Solutions Services in Singapore.",
+    "telephone": "+6588061585",
+    "email": "Info@axiomrise.sg",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "336 Smith Street, #05-301, New Bridge Centre",
       "addressLocality": "Singapore",
+      "postalCode": "050336",
       "addressCountry": "SG"
     },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+6588061585",
+      "contactType": "customer service",
+      "email": "Info@axiomrise.sg",
+      "availableLanguage": ["English"]
+    },
     "sameAs": [
-      "https://axiomrise.sg"
+      "https://axiomrise.sg",
+      "https://www.linkedin.com/in/axiom-rise-330054406/"
     ]
   };
 

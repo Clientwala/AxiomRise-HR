@@ -65,7 +65,7 @@ export default function Navbar() {
         {/* Left Side: Logo */}
         <Link href="/#home" onClick={(e) => handleScrollTo(e as unknown as React.MouseEvent<HTMLAnchorElement>, "/#home")} className={styles.logoWrapper}>
           <div className={styles.logoImageWrapper}>
-            <Image src="/logo.png" alt="Axiom Rise Logo" width={256} height={256} quality={100} priority className={styles.logoImage} />
+            <Image src="/logo.png" alt="Axiom Rise Logo" width={256} height={256} priority className={styles.logoImage} />
           </div>
           <div className={styles.logoTextWrapper}>
             <span className={styles.brandName}>Axiom Rise</span>

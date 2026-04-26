@@ -14,16 +14,20 @@ export default function Home() {
     "image": "https://axiomrise.sg/logo.png",
     "@id": "https://axiomrise.sg",
     "url": "https://axiomrise.sg",
-    "telephone": "",
+    "telephone": "+6588061585",
+    "priceRange": "$$",
+    "openingHours": "Mo-Fr 09:00-18:00",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "336 Smith Street, #05-301, New Bridge Centre",
       "addressLocality": "Singapore",
+      "postalCode": "050336",
       "addressCountry": "SG"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 1.3521,
-      "longitude": 103.8198
+      "latitude": 1.282302,
+      "longitude": 103.844391
     },
     "sameAs": [
       "https://axiomrise.sg"

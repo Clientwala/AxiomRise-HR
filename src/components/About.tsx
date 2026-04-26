@@ -71,6 +71,7 @@ export default function About() {
                   src="/asset/singaporean style/medium-shot-woman-leading-team.jpg" 
                   alt="Professional Leadership" 
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className={styles.aboutImage}
                 />
               </div>
@@ -81,6 +82,7 @@ export default function About() {
                   src="/asset/singaporean style/successful-team-discussing-project-tablet.jpg" 
                   alt="Team Collaboration" 
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className={styles.aboutImage}
                 />
               </div>
@@ -91,6 +93,7 @@ export default function About() {
                   src="/asset/service images/payroll-still-life-with-cash-high-angle.jpg" 
                   alt="Payroll & HR Services" 
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className={styles.aboutImage}
                 />
               </div>

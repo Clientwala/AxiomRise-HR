@@ -31,8 +31,8 @@
 }
 
 .logoImageWrapper {
-  width: 72px; /* Increased size slightly for better visibility */
-  height: 72px;
+  width: 60px; /* Reduced size as requested */
+  height: 60px;
   border-radius: 50%; /* Trims the native square corners of the image */
   overflow: hidden;
   display: flex;
@@ -243,8 +243,8 @@
 
 @media (max-width: 768px) {
   .logoImageWrapper {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
   }
 }
 

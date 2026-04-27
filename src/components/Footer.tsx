@@ -40,6 +40,7 @@ export default function Footer() {
               <li><a href="/#services">Permanent Placement</a></li>
               <li><a href="/#services">Contract Staffing</a></li>
               <li><a href="/#services">Payroll Administration</a></li>
+              <li><a href="/#services">Web Development</a></li>
             </ul>
           </div>
           

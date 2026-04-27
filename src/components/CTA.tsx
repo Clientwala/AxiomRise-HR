@@ -1,7 +1,7 @@
 import styles from "./CTA.module.css";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { SketchedPermanent, SketchedContract, SketchedPayroll } from "./HanddrawnIcons";
+import { SketchedPermanent, SketchedContract, SketchedPayroll, SketchedWebDev } from "./HanddrawnIcons";
 
 export default function CTA() {
   return (
@@ -40,6 +40,10 @@ export default function CTA() {
               <div className={styles.metric}>
                 <SketchedPayroll className={styles.metricIcon} />
                 <span>Payroll Admin</span>
+              </div>
+              <div className={styles.metric}>
+                <SketchedWebDev className={styles.metricIcon} />
+                <span>Web Development</span>
               </div>
             </div>
 

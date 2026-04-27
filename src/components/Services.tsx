@@ -26,6 +26,13 @@ export default function Services() {
       title: "Payroll Administration",
       description: <>Streamline HR with compliant, accurate, and <strong>timely payroll processing</strong> while you focus on core business.</>,
       link: "#contact"
+    },
+    {
+      image: "/asset/singaporean style/19849.jpg",
+      pill: "Custom Solutions",
+      title: "Web Development",
+      description: <>Customized <strong>frontend and backend</strong> solutions to scale your digital presence.</>,
+      link: "#contact"
     }
   ];
 

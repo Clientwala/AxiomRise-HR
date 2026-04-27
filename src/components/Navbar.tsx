@@ -27,9 +27,39 @@ export default function Navbar() {
       setActiveHash(current);
     };
 
+    const handleGlobalClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const anchor = target.closest('a');
+      if (!anchor) return;
+      
+      const href = anchor.getAttribute('href');
+      if (href && (href.startsWith('#') || href.startsWith('/#'))) {
+        e.preventDefault();
+        setMobileMenuOpen(false);
+        
+        if (window.location.pathname !== "/") {
+           window.location.href = href.startsWith('/') ? href : `/${href}`;
+           return;
+        }
+
+        const targetId = href.replace('/', '');
+        const element = document.querySelector(targetId);
+        if (element) {
+          window.scrollTo({
+            top: element.getBoundingClientRect().top + window.scrollY - 80,
+            behavior: "smooth",
+          });
+        }
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
+    document.addEventListener("click", handleGlobalClick);
     handleScroll(); // Initialization trigger
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("click", handleGlobalClick);
+    };
   }, []);
 
   const navLinks = [
@@ -39,31 +69,14 @@ export default function Navbar() {
     { name: "Contact Us", href: "/#contact" },
   ];
 
-  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    setMobileMenuOpen(false);
-
-    if (window.location.pathname !== "/") {
-      window.location.href = href;
-      return;
-    }
-
-    const targetId = href.replace('/', '');
-    const element = document.querySelector(targetId);
-    if (element) {
-      window.scrollTo({
-        top: element.getBoundingClientRect().top + window.scrollY - 80,
-        behavior: "smooth",
-      });
-    }
-  };
+  // Global interceptor handles scrolling now.
 
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
       <div className={`container ${styles.navContainer}`}>
         
         {/* Left Side: Logo */}
-        <Link href="/#home" onClick={(e) => handleScrollTo(e as unknown as React.MouseEvent<HTMLAnchorElement>, "/#home")} className={styles.logoWrapper}>
+        <a href="/#home" className={styles.logoWrapper}>
           <div className={styles.logoImageWrapper}>
             <Image src="/logo.png" alt="Axiom Rise Logo" width={256} height={256} priority className={styles.logoImage} />
           </div>
@@ -71,7 +84,7 @@ export default function Navbar() {
             <span className={styles.brandName}>Axiom Rise</span>
             <span className={styles.brandTagline}>TALENT & HR SOLUTIONS</span>
           </div>
-        </Link>
+        </a>
 
         {/* Right Side: Nav Links (Desktop) */}
         <div className={styles.navLinks}>
@@ -79,7 +92,6 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              onClick={(e) => handleScrollTo(e, link.href)}
               className={`${styles.navLink} ${activeHash === link.href ? styles.activeLink : ''}`}
             >
               {link.name}
@@ -87,7 +99,6 @@ export default function Navbar() {
           ))}
           <a
             href="/#contact"
-            onClick={(e) => handleScrollTo(e, "/#contact")}
             className={styles.ctaButton}
           >
             Get In Touch
@@ -110,7 +121,6 @@ export default function Navbar() {
           <a
             key={link.name}
             href={link.href}
-            onClick={(e) => handleScrollTo(e, link.href)}
             className={styles.mobileNavLink}
           >
             {link.name}
@@ -118,7 +128,6 @@ export default function Navbar() {
         ))}
         <a
           href="/#contact"
-          onClick={(e) => handleScrollTo(e, "/#contact")}
           className={styles.mobileCtaButton}
         >
           Get In Touch

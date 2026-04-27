@@ -44,7 +44,7 @@ export default function Services() {
         <div className={`${styles.sectionHeader} animate-fade-in-up`}>
           <div className={styles.headerLeft}>
             <span className={styles.sectionLabel}>WHAT WE OFFER</span>
-            <h2 className={styles.sectionTitle}>Workforce Solutions <br/> Tailored For You</h2>
+            <h2 className={styles.sectionTitle}>Strategic Talent & <br/> HR Solutions</h2>
           </div>
           <div className={styles.headerRight}>
             <p className={styles.sectionDesc}>
